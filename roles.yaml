@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::903438821308:role/lighthouse-prod20211030094654635700000009
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
+    - rolearn: arn:aws:iam::903438821308:role/AWSReservedSSO_AdministratorAccess_58a76e64a7dd599e
+      username: adminuser:{{SessionName}}
+      groups:
+        - system:masters
