@@ -14,3 +14,9 @@ data:
       username: adminuser:{{SessionName}}
       groups:
         - system:masters
+        - default:eks-admins
+    - rolearn: arn:aws:iam::903438821308:role/AWSReservedSSO_EKSAdmins_020db7d44aafb1f5
+      username: adminuser:{{SessionName}}
+      groups:
+        - system:masters
+        - default:eks-admins
