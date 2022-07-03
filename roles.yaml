@@ -1,4 +1,15 @@
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-10-30T10:08:01Z"
+  labels:
+    app.kubernetes.io/managed-by: Terraform
+    terraform.io/module: terraform-aws-modules.eks.aws
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "86952459"
+  selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
+  uid: f283b457-6765-492f-b437-7f2550c41be9
 data:
   mapAccounts: |
     []
@@ -14,14 +25,3 @@ data:
       "username": "system:node:{{EC2PrivateDNSName}}"
   mapUsers: |
     []
-kind: ConfigMap
-metadata:
-  creationTimestamp: "2021-10-30T10:08:01Z"
-  labels:
-    app.kubernetes.io/managed-by: Terraform
-    terraform.io/module: terraform-aws-modules.eks.aws
-  name: aws-auth
-  namespace: kube-system
-  resourceVersion: "86952459"
-  selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
-  uid: f283b457-6765-492f-b437-7f2550c41be9
