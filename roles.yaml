@@ -3,10 +3,10 @@ data:
   mapAccounts: |
     []
   mapRoles: |
-    - rolearn: arn:aws:iam::903438821308:role/AWSReservedSSO_AdministratorAccess_58a76e64a7dd599e
-      username: build
-      groups:
-        - system:masters
+    - "rolearn": "arn:aws:iam::903438821308:role/AWSReservedSSO_AdministratorAccess_58a76e64a7dd599e"
+      "adminuser:{{SessionName}}"
+      "groups":
+        - "system:masters"
     - "groups":
       - "system:bootstrappers"
       - "system:nodes"
